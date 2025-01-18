@@ -19,3 +19,5 @@ def palindrome(value):
 
 print(palindrome("12345"))  
 print(palindrome("123454321"))  
+print(palindrome("andrii")) 
+print(palindrome("Oppo")) 
