@@ -1,11 +1,11 @@
+from random import randint
 from queue import Queue
-import random
-import time
+from time import sleep
 
 q = Queue()
 
 def generate_request():
-    num = random.randint(1, 100)
+    num = randint(1, 100)
     application = f"Заявка {num}"
     q.put(application)
     print(f"Нова заяква створена {application}")
@@ -13,7 +13,7 @@ def generate_request():
 def process_request():
     if not q.empty():
         curr_q = q.get()
-        time.sleep(1)
+        sleep(1)
         print(f"Обробляється заявка {curr_q}...")
     else:
         print("Черга пуста")
@@ -23,7 +23,7 @@ def main():
     try:
         while True:
             generate_request()
-            time.sleep(2)
+            sleep(2)
             process_request()       
     except KeyboardInterrupt:
         print("\n Система обробки заявок зупинена.")
